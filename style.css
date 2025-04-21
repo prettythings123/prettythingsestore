@@ -1,0 +1,264 @@
+/* Body Styles */
+body {
+  font-family: 'Assistant', sans-serif;
+  margin: 0;
+  background-color: #f3f3f3;
+  background-image: url('images/bg-pattern.png');
+  background-size: cover;
+  color: #444;
+}
+
+/* Header Styles */
+header {
+  background-color: #d7b4f3;
+  color: #fff;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the navigation buttons */
+nav button.icon-button {
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  padding: 0.4rem; /* Reduce padding */
+  width: 30px; /* Make button smaller */
+  height: 30px; /* Make button smaller */
+  margin: 0 0.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav button.icon-button img {
+  width: 18px; /* Reduce image size */
+  height: 18px; /* Reduce image size */
+}
+
+#category-toggle img {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+/* Page Styles */
+.page {
+  padding: 2rem;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Fullscreen Category Menu Styles */
+#category-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #d7b4f3;
+  z-index: 999;
+  padding-top: 100px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.5rem;
+}
+
+#category-menu:not(.hidden) {
+  display: flex;
+}
+
+/* Close Button in Category Menu */
+/* Close Button */
+/* Close Button */
+#close-categories {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+#close-categories img {
+  width: 20px; /* Reduce width */
+  height: 20px; /* Reduce height */
+}
+
+
+/* Category Buttons in Menu */
+#category-menu button {
+  background: none;
+  border: none;
+  color: black;
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+  cursor: pointer;
+  font-weight: normal;
+}
+
+#category-menu button:hover {
+  text-decoration: underline;
+}
+
+/* Products Grid */
+/* Products Grid */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.products[data-category="jewelry"] {
+  display: block; /* By default, all products are displayed */
+}
+
+.products[data-category="hair"] {
+  display: block;
+}
+
+.products[data-category="bags"] {
+  display: block;
+}
+
+.products[data-category="sunglasses"] {
+  display: block;
+}
+
+.products[data-category="makeup"] {
+  display: block;
+}
+
+
+/* Product Card Styles */
+.product-card {
+  background-color: transparent; /* Set background to transparent */
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: left;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+  width: 100%;  /* Or you can set it to a specific percentage like 80% */
+  height: auto; /* Ensure the height is proportional to the width */
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+  object-fit: cover; /* Ensures images fill their container without distortion */
+}
+
+
+.product-card h3 {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+.price {
+  font-weight: bold;
+  color: #555;
+}
+
+/* Add to Cart Button Styles */
+.product-card button {
+  background-color: #ff69b4;
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  margin-top: 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.product-card button:hover {
+  background-color: #ff1493;
+}
+
+footer {
+  background-color: #d7b4f3;
+  padding: 2rem;
+  font-size: 0.9rem;
+  color: #222;
+  border-top: 1px solid #c59ae5;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+.footer-section {
+  flex: 1 1 250px;
+}
+
+.footer-section h3 {
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  color: #5b2c83;
+}
+
+.footer-section input[type="email"] {
+  padding: 0.5rem;
+  width: 80%;
+  max-width: 300px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+}
+
+.footer-section button {
+  padding: 0.5rem 1rem;
+  margin-top: 0.5rem;
+  background-color: #ff69b4;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.footer-section button:hover {
+  background-color: #ff1493;
+}
+
+.footer-section a {
+  color: #5b2c83;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  margin-top: 2rem;
+  border-top: 1px solid #c59ae5;
+  padding-top: 1rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #333;
+}
+
+.footer-bottom a {
+  color: #222;
+  text-decoration: none;
+  margin: 0 0.3rem;
+}
+
+.footer-bottom a:hover {
+  text-decoration: underline;
+}

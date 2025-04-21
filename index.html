@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Girls Accessories</title>
+  
+  <!-- Fonts and Styles -->
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@400;700&family=Assistant&display=swap" rel="stylesheet">
+  
+  <!-- Ionicons (for close button if used) -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+
+<header>
+  <div id="category-toggle" onclick="toggleCategories()">
+    <img src="images/icons/category.png" alt="Categories" />
+  </div>
+
+  <h1>PrettyThings</h1>
+
+  <nav>
+    <button onclick="showPage('home')" class="icon-button">
+      <img src="images/icons/home.png" alt="Home" />
+    </button>
+    <button onclick="showPage('cart')" class="icon-button">
+      <img src="images/icons/cart.png" alt="Cart" />
+    </button>
+  </nav>
+</header>
+
+<!-- Fullscreen Categories Menu -->
+<div id="category-menu" class="hidden">
+  <div id="close-categories" onclick="toggleCategories()">
+    <img src="images/icons/close-icon.png" alt="Close" />
+  </div>
+  <button onclick="filterCategory('all')">All</button>
+  <button onclick="filterCategory('jewelry')">Jewelry</button>
+  <button onclick="filterCategory('hair')">Hair</button>
+  <button onclick="filterCategory('bags')">Bags</button>
+  <button onclick="filterCategory('sunglasses')">Sunglasses</button>
+  <button onclick="filterCategory('makeup')">Makeup</button>
+</div>
+
+<main>
+  <section id="home" class="page">
+    <h2>Shop Accessories</h2>
+
+    <h3>👑 Jewelry</h3>
+    <div class="products fade-in" data-category="jewelry">
+      <div class="product-card">
+        <img src="images/earrings.jpg" alt="Earrings" />
+        <h3>Rose Gold Earrings</h3>
+        <p class="price">₹299</p>
+        <button onclick="addToCart('Rose Gold Earrings', 299)">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/necklace.jpg" alt="Necklace" />
+        <h3>Choker Necklace</h3>
+        <p class="price">₹399</p>
+        <button onclick="addToCart('Choker Necklace', 399)">Add to Cart</button>
+      </div>
+    </div>
+
+    <h3>💇 Hair Accessories</h3>
+    <div class="products fade-in" data-category="hair">
+      <div class="product-card">
+        <img src="images/hairband.jpg" alt="Hairband" />
+        <h3>Cute Hairband</h3>
+        <p class="price">₹199</p>
+        <button onclick="addToCart('Cute Hairband', 199)">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/scrunchie.jpg" alt="Scrunchie" />
+        <h3>Floral Scrunchie</h3>
+        <p class="price">₹99</p>
+        <button onclick="addToCart('Floral Scrunchie', 99)">Add to Cart</button>
+      </div>
+    </div>
+
+    <h3>👜 Bags</h3>
+    <div class="products fade-in" data-category="bags">
+      <div class="product-card">
+        <img src="images/purse.jpg" alt="Mini Purse" />
+        <h3>Mini Hand Purse</h3>
+        <p class="price">₹549</p>
+        <button onclick="addToCart('Mini Hand Purse', 549)">Add to Cart</button>
+      </div>
+    </div>
+
+    <h3>😎 Sunglasses</h3>
+    <div class="products fade-in" data-category="sunglasses">
+      <div class="product-card">
+        <img src="images/sunglasses.jpg" alt="Sunglasses" />
+        <h3>Round Frame Shades</h3>
+        <p class="price">₹499</p>
+        <button onclick="addToCart('Round Frame Shades', 499)">Add to Cart</button>
+      </div>
+    </div>
+
+    <h3>🧴 Makeup Tools</h3>
+    <div class="products fade-in" data-category="makeup">
+      <div class="product-card">
+        <img src="images/makeup-brush.jpg" alt="Brush Set" />
+        <h3>Makeup Brush Set</h3>
+        <p class="price">₹649</p>
+        <button onclick="addToCart('Makeup Brush Set', 649)">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="cart" class="page hidden">
+    <h2>Your Cart</h2>
+    <ul id="cart-items"></ul>
+    <p id="total-price"></p>
+    <form onsubmit="return payNow(event)">
+      <input type="text" placeholder="Your Name" required />
+      <input type="text" placeholder="Address" required />
+      <button type="submit">Pay Now</button>
+    </form>
+  </section>
+</main>
+
+<script src="script.js"></script>
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-section subscribe">
+      <h3><center>Subscribe to our emails</center></h3>
+      <p><center>Be the first to know about new collections and exclusive offers.</center></p>
+      <input type="email" placeholder="Enter your email" />
+      <button>Subscribe</button>
+    </div>
+
+    <div class="footer-section info">
+      <p><strong>Search</strong></p>
+      <p>Shipping Policy</p>
+      <p>Prepaid payments | Hassle free secure payment</p>
+      <p>For reviews visit our <a href="#" target="_blank">Instagram</a> official handle</p>
+    </div>
+
+    <div class="footer-section contact">
+      <p><strong>Address:</strong><br>123 New Delhi</p>
+      <p><strong>Contact:</strong> 991198xxxx</p>
+      <p>Customer Care open between 11AM to 6PM</p>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025, PrettyThings | Powered by HTML+CSS+JS</p>
+      <p>
+        <a href="#">Refund Policy</a> |
+        <a href="#">Privacy Policy</a> |
+        <a href="#">Terms of Service</a> |
+        <a href="#">Shipping Policy</a> |
+        <a href="#">Contact</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
